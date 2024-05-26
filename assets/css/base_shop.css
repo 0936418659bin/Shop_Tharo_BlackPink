@@ -1,0 +1,255 @@
+:root {
+    --pink-color: #fff3f3;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: rgb(251, 166, 180);
+    --border-color: #dbdbdb;
+    --star-gold-color: #ffce3e;
+    --background-color: #fff3f3;
+    --white-color: #fff;
+
+    --navbar-height: 38px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+
+* {
+    box-sizing: inherit;
+
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Reponsive */
+
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: -5px;
+    padding-right: -5px;
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+
+
+/* Animation */
+/* Animation */
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from{
+        transform: scale(var(--growth-form));
+    } 
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+@keyframes loop {
+    0% { 
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__body {
+    --growth-form: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+
+/* button style */
+.btn {
+    min-width: 123px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4rem;
+    background-color: var(--pink-color);
+}
+
+.btn.btn--size-s {
+    height: 30px;
+    font-size: 12px;
+}
+
+.btn.btn--return:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.btn.btn--return {
+    background-color: var(--pink-color);
+}
+
+.btn.btn--primary {
+    color: var(--pink-color);
+    background-color: var(--primary-color);
+}
+
+
+/* Selection */
+
+.select-input {
+    position: relative;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--pink-color);
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.1rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 0.5px;
+}
+
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 28px;
+    border-radius: 2px;
+    background-color: var(--pink-color);
+    padding: 10px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 100%;
+    height: 8px;
+}
+
+.select-input__link {
+
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item__active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 2px;
+}
+
+.pagination-item__active:hover {
+    opacity: 0.8;
+}
+
+.pagination-item__link{
+    --height: 30px;
+    border-radius: 2px;
+    display: block;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--pink-color);
+    min-width: 40px;
+    height: var(--height);
+    text-align: center;
+    line-height: var(--height);
+}
+
+.pagination-item__icon{
+
+}
