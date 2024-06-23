@@ -145,7 +145,7 @@ html {
 
 .btn.btn--primary {
     color: var(--pink-color);
-    background-color: var(--primary-color);
+    background-color: rgb(244 96 120);
 }
 
 
